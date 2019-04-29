@@ -1,0 +1,199 @@
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+html,body {
+	margin: 0;
+	background: #2980b9;
+	height: 100%;
+	overflow: hidden;
+	font-family: helvetica;
+}
+
+body {
+	padding-top: env(safe-area-inset-top); /* 在 iphone x + 中本句才会生效 */
+}
+
+#chess-board {
+	box-sizing: border-box;
+	width: 100%;
+	/* height: 25.875rem; */
+	height: 20.875rem;
+	margin: 1rem auto 1rem;
+	border-radius: 1rem;
+	padding: 0.25rem;
+	background: #3498db;
+}
+
+.chess-grid {
+	box-sizing: border-box;
+	margin: 1%;
+	width: 31%;
+	height: 31%;
+	border-radius: 0.5rem;
+	float: left;
+	background: #16a085;
+	transition: 0.5s;
+}
+
+.chess-grid-on {
+	animation: chess-grid-on 1.5s;
+}
+
+@keyframes chess-grid-on {
+	0% {
+		transform: scale(.1);
+		background: #16a085;
+	}
+
+	50% {
+		transform: scale(1);
+		background: #1abc9c;
+	}
+
+	100% {
+		background: #16a085;
+	}
+}
+
+.wait-clock {
+	background: #16a085;
+}
+
+.wait-clock::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	/* top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; */
+	background-image: url('./img/clocks.svg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	animation: wait-clock 1s;
+}
+
+@keyframes wait-clock {
+	0% {
+		opacity: 0;
+	}
+
+	33% {
+		opacity: 1;
+	}
+
+	66% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.piece {
+	box-sizing: border-box;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 0.5rem;
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 4rem;
+	text-align: center;
+	line-height: 6.954rem;
+	position: relative;
+	color: #fff;
+}
+
+
+.piece::after {
+	content: " ";
+	box-sizing: border-box;
+	width: 100%;
+	height: 12%;
+	border-radius: 0.5rem;
+	background: rgba(0, 0, 0, .2);
+	display: block;
+}
+
+.piece-off {
+	display: none;
+}
+
+.local-piece-on {
+	background: #e74c3c;
+	display: block;
+	animation-name: piece-on;
+	-webkit-animation-name: piece-on;
+	animation-duration: 0.2s;
+	-webkit-animation-duration: 0.2s;
+}
+
+.foreign-piece-on {
+	background: #2ecc71;
+	display: block;
+	animation-name: piece-on;
+	-webkit-animation-name: piece-on;
+	animation-duration: 0.4s;
+	-webkit-animation-duration: 0.2s;
+}
+
+@keyframes piece-on {
+	0% {
+		transform: scale(1.5);
+		opacity: 0;
+	}
+
+	50% {
+		transform: scale(0.8);
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.none-response-area {
+	animation: none-response-area 1.2s !important;
+}
+
+@keyframes none-response-area {
+	0% {
+		background: #3498db
+	}
+
+	50% {
+		background: #51a0d4
+	}
+
+	100% {
+		background: #3498db
+	}
+}
+
+.just-tap {
+	animation: just-tap 1s;
+}
+
+@keyframes just-tap {
+	50% {
+		background: #25a88e;
+		transform: scale(0.8);
+	}
+
+	100% {
+		background: #16a085;
+		transform: scale(1);
+	}
+}

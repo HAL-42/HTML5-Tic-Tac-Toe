@@ -1,0 +1,81 @@
+<!--
+ * @Author: Xiaobo Yang
+ * @Email: hal_42@zju.edu.cn
+ * @Company: Zhejiang University
+ * @LastEditors: Xiaobo Yang
+ * @Description: Omitted
+ * @Date: 2019-04-26 14:38:08
+ * @LastEditTime: 2019-04-28 03:28:41
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Learn JS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, 
+		max-scale=1.0, min-scale=1.0, user-scalable=no viewport-fit=cover" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="button.css" />
+
+  <!--Add JQuery-->
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+  </script>
+
+  <!-- Add jQuery Mobile -->
+  <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <script type="text/javascript">
+    if (typeof jQuery == 'undefined') {
+      window.alert('JQ Fail');
+    }
+  </script>
+  <!--Adapt height of chess board-->
+  <script src="lib.js"></script>
+  <script src="script.js"></script>
+
+
+</head>
+
+<body>
+  <header style="text-align: center;  color: #fff;">
+    <h1>Tic Tac Toe</h1>
+    <p style="display: block; margin: 0.5rem auto 0.5rem;">
+      The
+      <span id="game-count">0</span>
+      th Game <br/> <br />Already winned for
+      <span id="win-count">0 </span>
+      times <br/> <br/> Current Difficulty is
+      <span id="current-diff" style="font-weight: bold;"> Emperor</span>
+    </p>
+  </header>
+  <div id='buttons'>
+    <a class='btn red' id='new-game-btn' href='#'> New Game </a>
+  </div>
+  <div id="chess-board">
+    <div id="chess-grid-0-0" class="chess-grid">
+      <div class="piece local-piece-on">X</div>
+    </div>
+    <div id="chess-grid-0-1" class="chess-grid"></div>
+    <div id="chess-grid-0-2" class="chess-grid"></div>
+    <div id="chess-grid-1-0" class="chess-grid"></div>
+    <div id="chess-grid-1-1" class="chess-grid"></div>
+    <div id="chess-grid-1-2" class="chess-grid"></div>
+    <div id="chess-grid-2-0" class="chess-grid"></div>
+    <div id="chess-grid-2-2" class="chess-grid"></div>
+    <div id="chess-grid-2-3" class="chess-grid"></div>
+  </div>
+  <div id='setting-bar'>
+      <a class='btn purple center' id='dif-0' href='#'> Settler </a>
+      <a class='btn yellow center' id='dif-1' href='#'> Warlord </a>
+      <a class='btn red center' id='dif-2' href='#'> Emperor </a>
+      <a class='btn sea center' id='dif-3' href='#'> God </a>
+      <a class='btn wet center' id='dif-conf' href='#' style="width: 35%;"> Confirm </a>
+  </div>
+  <div id='set-btn'>
+    <img src="img/gear.svg" alt="gear" />
+  </div>
+</body>
+
+</html>
